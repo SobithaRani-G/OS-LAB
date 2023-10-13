@@ -4,15 +4,18 @@ void main()
 {
 	int frag[max],b[max],f[max],i,j,nb,nf,temp,lowest=10000;
 	static int bf[max],ff[max];
-	printf("\nEnter the number of blocks:");
+	printf("\n\tMemory management scheme - Best Fit");
+	printf("\nEnter no of blocks:");
 	scanf("%d",&nb);
-	printf("Enter the number of files:");
+	printf("Enter no of files:");
 	scanf("%d",&nf);
-	printf("\nEnter the size of the blocks:-\n");
+	printf("\nEnter the size of blocks:-\n");
 	for(i=1;i<=nb;i++)
-	printf("Block %d:",i);
-	scanf("%d",&b[i]);
-	printf("Enter the size of the files :-\n");
+	{
+		printf("Block %d:",i);
+		scanf("%d",&b[i]);
+	}
+	printf("\nEnter the size of the files:-\n");
 	for(i=1;i<=nf;i++)
 	{
 		printf("File %d:",i);
@@ -22,22 +25,24 @@ void main()
 	{
 		for(j=1;j<=nb;j++)
 		{
-		if(bf[j]!=1)
-		{
-		temp=b[j]-f[i];
-		if(temp>=0)
-		if(lowest>temp)
-		{
-			ff[i]=j;
-			lowest=temp;
+			if(bf[j]!=1)
+			{
+				temp=b[j]-f[i];
+				if(temp>=0)
+				{
+					if(lowest>temp)
+					{
+						ff[i]=j;
+						lowest=temp;
+					}
+				}
+			}
 		}
-		}
-		}
-	frag[i]=lowest;
-	bf[ff[i]]=1;
-	lowest=10000;
+		frag[i]=lowest;
+		bf[ff[i]]=1;
+		lowest=10000;
 	}
-	printf("\nFile No\tFile Size \tBlock No\tBlock
-	Size\tFragment"); for(i=1;i<=nf && ff[i]!=0;i++)
-	printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d",i,f[i],ff[i],b[ff[i]],frag[i]);
+	printf("File_no:\tFile_Size:\tBlock_no:\tBlock_size:\tFragment:\n");
+	for(i=1;i<=nf && ff[i]!=0;i++)
+	printf("%d\t\t%d\t\t%d\t\t%d\t\t%d\n",i,f[i],ff[i],b[ff[i]],frag[i]);
 }
