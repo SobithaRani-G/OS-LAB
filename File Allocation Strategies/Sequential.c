@@ -12,18 +12,18 @@ void main()
   {
     f[j]=1;
     printf("\n%d->%d",j,f[j]);
-   }
+  }
   else
   {
     printf("Block already allocated"); 
     break;
   }
   if(j==(st+len))
-  printf("\n the file is allocated to disk");
+    printf("\n the file is allocated to disk");
   printf("\n if u want to enter more files?(y-1/n-0)"); 
   scanf("%d",&c);
   if(c==1) 
-  goto X; 
+    goto X; 
   else 
-  exit(0);
+    exit(0);
 }
