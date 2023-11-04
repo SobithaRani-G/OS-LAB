@@ -1,5 +1,5 @@
 #include<stdio.h>
-main()
+void main()
 {
 	int ms,mp[10],i,temp,n=0;
 	char ch = 'y';
@@ -26,7 +26,7 @@ main()
 	printf("\n\nTotal Memory Available -- %d", ms);
 	printf("\n\n\tPROCESS\t\t MEMORY ALLOCATED ");
 	for(i=0;i<n;i++)
-	printf("\n \t%d\t\t%d",i+1,mp[i]);
+		printf("\n \t%d\t\t%d",i+1,mp[i]);
 	printf("\n\nTotal Memory Allocated is %d",ms-temp);
 	printf("\nTotal External Fragmentation is %d",temp);
 }
