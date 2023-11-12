@@ -24,7 +24,7 @@ void main()
 				break;
 			case 2: printf("\nEnter name of the directory -- ");
 				scanf("%s",d);
-				for(i=0;i<dcnt;i++)
+				for(i=0;i<dcnt;i++){
 				if(strcmp(d,dir[i].dname)==0)
 				{
 					printf("Enter name of the file -- ");
@@ -35,6 +35,7 @@ void main()
 				if(i==dcnt)
 				printf("Directory %s not found",d);
 				break;
+				}
 			case 3: printf("\nEnter name of the directory -- ");
 				scanf("%s",d);
 				for(i=0;i<dcnt;i++)
