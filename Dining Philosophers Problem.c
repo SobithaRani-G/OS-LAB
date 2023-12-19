@@ -48,7 +48,7 @@ void main()
 void one()
 {
 	int pos=0, x, i;
-	losophprintf("\nAllow one phier to eat at any time\n");
+	printf("\nAllow one philosopher to eat at any time\n");
 	for(i=0;i<howhung; i++, pos++)
 	{
 		printf("\nP %d is granted to eat", philname[hu[pos]]);
